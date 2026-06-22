@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import svgPaths from "@/imports/GroupReviewConfiguration-1/svg-aw4nsdxljr";
 import emptyStatePaths from "@/imports/Frame/svg-0az1rbloz0";
 import imgImage2 from "@/imports/GroupReviewConfiguration-1/a3c1266a69fbde8dd338ab7916b3e9274218ab71.png";
@@ -916,7 +917,7 @@ function StatusBadge({ status }: { status: GroupStatus }) {
   );
 }
 
-// ─── Sidebar ─────────────────────────────────────────────────────────────────
+// ─── Sidebar ────────────────────────────────────────────────────��────────────
 
 function Sidebar() {
   const steps = [
@@ -1630,6 +1631,7 @@ export default function App() {
       {modal === "reviewSubmit"   && <ReviewSubmitModal onClose={closeModal} onConfirm={handleReviewSubmitConfirm} />}
 
       {isAuditTrailOpen && <AuditTrailDrawer onClose={() => setIsAuditTrailOpen(false)} />}
+      <Analytics />
     </div>
   );
 }
